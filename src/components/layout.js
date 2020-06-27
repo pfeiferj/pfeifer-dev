@@ -7,7 +7,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from '../theme';
 
@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Link style={{textDecoration:'none'}} to="/"><Header siteTitle={data.site.siteMetadata.title} /></Link>
         <div
           style={{
             margin: `0 auto`,
