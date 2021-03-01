@@ -24,7 +24,7 @@ jobs:
           node-version: 14.x
       - run: git fetch
       - run: git checkout pages
-      - run: git merge main
+      - run: git merge origin main
       - run: npm ci
       - run: npm run build
       - run: git add public -f
