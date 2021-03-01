@@ -24,6 +24,7 @@ jobs:
           node-version: 14.x
       - run: git fetch
       - run: git checkout pages
+      - run: git pull --ff-only
       - run: git merge origin/main
       - run: npm ci
       - run: npm run build
