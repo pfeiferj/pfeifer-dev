@@ -18,7 +18,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run npm run build
+      - name: setup node
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
@@ -27,7 +27,7 @@ jobs:
       - name: Deploy
         uses: EndBug/add-and-commit@v7 # You can change this to use a specific version
         with:
-          add: 'public'
+          add: 'public -f'
           author_name: Jacob Pfeifer
           author_email: jacob@pfeifer.dev
           branch: pages
