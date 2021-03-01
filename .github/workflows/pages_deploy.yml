@@ -26,6 +26,8 @@ jobs:
       - run: git fetch
       - run: git checkout pages
       - run: git pull --ff-only
+      - run: git config user.email "jacob@pfeifer.dev"
+      - run: git config --global user.name "Jacob Pfeifer"
       - run: git merge origin/main
       - run: npm ci
       - run: npm run build
