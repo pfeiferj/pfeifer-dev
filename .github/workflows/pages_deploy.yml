@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: 14.x
       - run: git fetch
-      - run: git checkout public
+      - run: git checkout pages
       - run: git pull origin main
       - run: npm ci
       - run: npm run build
