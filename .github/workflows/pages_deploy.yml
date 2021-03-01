@@ -18,12 +18,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          ref: 'main'
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          ref: 'pages'
-
+          fetch-depth: 0
       - name: setup node
         uses: actions/setup-node@v1
         with:
