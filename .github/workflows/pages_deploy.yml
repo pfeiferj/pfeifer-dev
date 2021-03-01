@@ -22,14 +22,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
+      - run: git fetch
+      - run: git checkout public
+      - run: git pull origin main
       - run: npm ci
       - run: npm run build
-      - run: git fetch
-      - name: Deploy
-        uses: EndBug/add-and-commit@v7 # You can change this to use a specific version
-        with:
-          add: 'public -f'
-          author_name: Jacob Pfeifer
-          author_email: jacob@pfeifer.dev
-          branch: pages
-          message: 'deploy pages'
+      - run: git add public -f
+      - run: git commit -m "update build for github pages"
+      - run: git push
+
