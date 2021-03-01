@@ -24,7 +24,7 @@ jobs:
           node-version: 14.x
       - run: git fetch
       - run: git checkout pages
-      - run: git pull origin main --ff-only
+      - run: git pull origin main --no-rebase
       - run: npm ci
       - run: npm run build
       - run: git add public -f
